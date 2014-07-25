@@ -1,0 +1,17 @@
+{
+    "name": "greg0ire/enum-bundle",
+    "description": "Integrates greg0ire/enum in a Symfony2 project",
+    "require": {
+        "greg0ire/enum": "~1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.1"
+    },
+    "license": "CC-BY-SA-3.0",
+    "authors": [
+        {
+            "name": "Grégoire Paris",
+            "email": "postmaster@greg0ire.fr"
+        }
+    ]
+}
