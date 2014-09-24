@@ -26,4 +26,15 @@ class BaseEnumTest extends \PHPUnit_Framework_TestCase
             $choiceList->getRemainingViews()[0]->data
         );
     }
+
+    public function testGetChoices()
+    {
+        $this->assertSame(
+            array(
+                42           => 'label_dummy_42',
+                'some_value' => 'label_dummy_some_value'
+            ),
+            DummyEnum::getChoices('label_dummy_%s')
+        );
+    }
 }

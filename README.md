@@ -49,6 +49,24 @@ class MyType
 }
 ```
 
+Alternatively, you can use the `choices` option :
+
+```php
+<?php
+
+class MyType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder->add(
+            'aspect_ratio',
+            'choice',
+            array('choices' => ColorType::getChoices('color_type_%s')
+        );
+    }
+}
+```
+
 You then need to create translations for :
 
 - `color_type_black-white`

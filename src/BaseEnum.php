@@ -28,4 +28,26 @@ abstract class BaseEnum extends LibraryEnum
             )
         );
     }
+
+    /**
+     * @return ChoiceList an associative array, ready for use with the choices
+     *                    option of a symfony choice widget
+     */
+    public static function getChoices($pattern)
+    {
+        $constants = self::getConstants();
+
+        return array_combine(
+            $values = array_values($constants),
+            array_map(
+                function ($element) use ($pattern) {
+                    return sprintf(
+                        $pattern,
+                        $element
+                    );
+                },
+                $values
+            )
+        );
+    }
 }
