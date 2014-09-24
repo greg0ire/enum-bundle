@@ -8,7 +8,8 @@ use Greg0ire\Enum\BaseEnum as LibraryEnum;
 abstract class BaseEnum extends LibraryEnum
 {
     /**
-     * @return ChoiceList a symfony choice list, ready for use inside a Symfony form
+     * @return ChoiceList a symfony choice list, ready for use as the choice_list
+     *                    option of a symfony choice widget
      */
     public static function getChoiceList($pattern)
     {
