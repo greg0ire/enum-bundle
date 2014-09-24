@@ -40,7 +40,11 @@ class MyType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('aspect_ratio' => ColorType::getChoiceList('color_type_%s'));
+        $builder->add(
+            'aspect_ratio',
+            'choice',
+            array('choice_list' => ColorType::getChoiceList('color_type_%s')
+        );
     }
 }
 ```
