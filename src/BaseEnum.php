@@ -8,6 +8,8 @@ use Greg0ire\Enum\BaseEnum as LibraryEnum;
 abstract class BaseEnum extends LibraryEnum
 {
     /**
+     * @param  mixed string|null a sprintf compatible pattern for generating labels
+     *
      * @return ChoiceList a symfony choice list, ready for use as the choice_list
      *                    option of a symfony choice widget
      */
@@ -30,6 +32,8 @@ abstract class BaseEnum extends LibraryEnum
     }
 
     /**
+     * @param  mixed string|null a sprintf compatible pattern for generating labels
+     *
      * @return ChoiceList an associative array, ready for use with the choices
      *                    option of a symfony choice widget
      */
