@@ -73,5 +73,10 @@ You then need to create translations for :
 - `color_type_color`
 - `color_type_colorized`
 
+The argument to both `getChoiceList()` and `getChoices()` is optional, and the
+value will be used directly as a label should you choose not to specify it.
+This makes sense if you decide to have a translation catalogue just for your
+enumeration.
+
 [1]: https://packagist.org/packages/greg0ire/enum
 

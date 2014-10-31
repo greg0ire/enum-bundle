@@ -25,6 +25,16 @@ class BaseEnumTest extends \PHPUnit_Framework_TestCase
             42,
             $choiceList->getRemainingViews()[0]->data
         );
+
+        $choiceList = DummyEnum::getChoiceList();
+        $this->assertSame(
+            42,
+            $choiceList->getRemainingViews()[0]->label
+        );
+        $this->assertSame(
+            42,
+            $choiceList->getRemainingViews()[0]->data
+        );
     }
 
     public function testGetChoices()
@@ -35,6 +45,13 @@ class BaseEnumTest extends \PHPUnit_Framework_TestCase
                 'some_value' => 'label_dummy_some_value'
             ),
             DummyEnum::getChoices('label_dummy_%s')
+        );
+        $this->assertSame(
+            array(
+                42           => 42,
+                'some_value' => 'some_value'
+            ),
+            DummyEnum::getChoices()
         );
     }
 }

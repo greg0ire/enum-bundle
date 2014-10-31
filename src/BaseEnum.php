@@ -13,21 +13,13 @@ abstract class BaseEnum extends LibraryEnum
      * @return ChoiceList a symfony choice list, ready for use as the choice_list
      *                    option of a symfony choice widget
      */
-    public static function getChoiceList($pattern)
+    public static function getChoiceList($pattern = null)
     {
         $constants = self::getConstants();
 
         return new ChoiceList(
             $values = array_values($constants),
-            array_map(
-                function ($element) use ($pattern) {
-                    return sprintf(
-                        $pattern,
-                        $element
-                    );
-                },
-                $values
-            )
+            self::getLabelArray($values, $pattern)
         );
     }
 
@@ -37,12 +29,20 @@ abstract class BaseEnum extends LibraryEnum
      * @return ChoiceList an associative array, ready for use with the choices
      *                    option of a symfony choice widget
      */
-    public static function getChoices($pattern)
+    public static function getChoices($pattern = null)
     {
         $constants = self::getConstants();
 
         return array_combine(
             $values = array_values($constants),
+            self::getLabelArray($values, $pattern)
+        );
+    }
+
+    public function getLabelArray($values, $pattern)
+    {
+        return $pattern === null ?
+            $values:
             array_map(
                 function ($element) use ($pattern) {
                     return sprintf(
@@ -51,7 +51,6 @@ abstract class BaseEnum extends LibraryEnum
                     );
                 },
                 $values
-            )
-        );
+            );
     }
 }
