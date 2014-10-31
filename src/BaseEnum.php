@@ -39,7 +39,7 @@ abstract class BaseEnum extends LibraryEnum
         );
     }
 
-    public function getLabelArray($values, $pattern)
+    public static function getLabelArray($values, $pattern)
     {
         return $pattern === null ?
             $values:
