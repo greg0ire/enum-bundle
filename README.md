@@ -43,7 +43,7 @@ class MyType
         $builder->add(
             'aspect_ratio',
             'choice',
-            array('choice_list' => ColorType::getChoiceList('color_type_%s')
+            array('choice_list' => ColorType::getChoiceList('color_type_%s'))
         );
     }
 }
@@ -61,7 +61,7 @@ class MyType
         $builder->add(
             'aspect_ratio',
             'choice',
-            array('choices' => ColorType::getChoices('color_type_%s')
+            array('choices' => ColorType::getChoices('color_type_%s'))
         );
     }
 }
