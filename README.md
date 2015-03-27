@@ -6,6 +6,8 @@ yet but :
 - it has a dependency on symfony/form
 - it could become a real bundle someday, if something needs to be configured
 
+[![Build Status][3]](https://travis-ci.org/greg0ire/enum-bundle)
+
 ## Installation
 
     composer require greg0ire/enum-bundle
@@ -79,4 +81,4 @@ This makes sense if you decide to have a translation catalogue just for your
 enumeration.
 
 [1]: https://packagist.org/packages/greg0ire/enum
-
+[2]: https://travis-ci.org/greg0ire/enum-bundle.svg?branch=master
