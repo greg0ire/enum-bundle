@@ -3,7 +3,7 @@
     "description": "Integrates greg0ire/enum in a Symfony2 project",
     "keywords": ["enum", "enumeration"],
     "require": {
-        "greg0ire/enum": "~1.0",
+        "greg0ire/enum": "~1.1",
         "symfony/form": "~2.3"
     },
     "require-dev": {
