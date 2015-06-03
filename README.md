@@ -15,8 +15,8 @@ yet but :
 ## Usage
 
 The bundle provides its own `BaseEnum` class. It inherits from `greg0ire/enum`'s
-`BaseEnum` class and provides an additional method, `getChoiceList()`, which
-is meant to be used as value for the `choice_list` option of a choice widget.
+`BaseEnum` class and provides an additional method, `getChoices()`, which
+is meant to be used as value for the `choices` option of a choice widget.
 It has a mandatory parameter, which is a `sprintf` format string and let's you choose
 how to generate your labels.
 
@@ -45,24 +45,6 @@ class MyType
         $builder->add(
             'aspect_ratio',
             'choice',
-            array('choice_list' => ColorType::getChoiceList('color_type_%s'))
-        );
-    }
-}
-```
-
-Alternatively, you can use the `choices` option :
-
-```php
-<?php
-
-class MyType
-{
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder->add(
-            'aspect_ratio',
-            'choice',
             array('choices' => ColorType::getChoices('color_type_%s'))
         );
     }
@@ -75,10 +57,9 @@ You then need to create translations for :
 - `color_type_color`
 - `color_type_colorized`
 
-The argument to both `getChoiceList()` and `getChoices()` is optional, and the
-value will be used directly as a label should you choose not to specify it.
-This makes sense if you decide to have a translation catalogue just for your
-enumeration.
+The argument to `getChoices()` is optional, and the value will be used directly
+as a label should you choose not to specify it.  This makes sense if you decide
+to have a translation catalogue just for your enumeration.
 
 [1]: https://packagist.org/packages/greg0ire/enum
 [2]: https://travis-ci.org/greg0ire/enum-bundle.svg?branch=master
