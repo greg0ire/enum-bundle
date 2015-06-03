@@ -4,7 +4,8 @@
     "keywords": ["enum", "enumeration"],
     "require": {
         "greg0ire/enum": "~1.0",
-        "symfony/form": "~2.3"
+        "symfony/form": "~2.3",
+        "symfony/dependency-injection": "^2.7"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.1"

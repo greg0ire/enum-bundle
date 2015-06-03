@@ -68,6 +68,31 @@ class MyType
     }
 }
 ```
+Possibility of configuration of the translation chain
+
+In ```AppKernel.php```
+
+```php
+
+$bundles = array(
+
+    /** other bundles */
+    new Greg0ire\EnumBundle\Greg0ireEnumBundle(),
+
+);
+
+```
+
+In ```config.yml``` add :
+
+you can choose between **underscore** or **camelize**
+
+```yml
+
+greg0ire_enum:
+    chain: underscore
+
+```
 
 You then need to create translations for :
 
