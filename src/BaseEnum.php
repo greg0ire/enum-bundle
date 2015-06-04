@@ -37,15 +37,16 @@ abstract class BaseEnum extends LibraryEnum
             );
     }
 
-    public static function format($pattern, $element)
+    protected static function format($pattern, $element)
     {
         $formatter = BaseEnum::$formatter;
+        $chain = sprintf($pattern, $element);
 
         if ($formatter == null) {
-            return sprintf($pattern, $element);
+            return $chain;
         }
 
-        return $formatter->format(sprintf($pattern, $element));
+        return $formatter->format($chain);
     }
 
     public static function setFormatter(FormatterInterface $formatter)

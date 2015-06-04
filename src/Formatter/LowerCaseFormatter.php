@@ -10,7 +10,7 @@ class LowerCaseFormatter implements FormatterInterface
      */
     public function format($text)
     {
-        return strtolower(strtr($text, ['.' => '_', '-' => '_']));
+        return strtolower(strtr($text, ['.' => '_', '-' => '_', ' '=> '_']));
     }
 
 }

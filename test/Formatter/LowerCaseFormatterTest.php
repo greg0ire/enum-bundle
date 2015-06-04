@@ -9,8 +9,8 @@ class LowerCaseFormatterTest extends \PHPUnit_Framework_TestCase
     {
         $formatter = new LowerCaseFormatter();
         $this->assertEquals(
-            'result', // change that with the expected result
-            'original translation key' // change that with a real translation key
+            $formatter->format('original translation key'), // change that with the expected result
+            'original_translation_key' // change that with a real translation key
         );
     }
 }

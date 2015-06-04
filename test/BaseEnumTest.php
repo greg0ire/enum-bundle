@@ -35,11 +35,21 @@ class BaseEnumTest extends \PHPUnit_Framework_TestCase
             'Greg0ire\EnumBundle\Formatter\FormatterInterface'
         );
         BaseEnum::setFormatter($formatter->reveal());
-        $formatter->format('change me')->willReturn('change that too');
-        $formatter->format('change me')->willReturn('change that too');
-        $formatter->format('change me')->willReturn('change that too');
-        $formatter->format('change me')->willReturn('change that too');
-        $this->assertEquals(array('change that'), DummyEnum::getChoices('and change me too'));
-        $this->assertEquals(array('change that too'), DummyEnum::getChoices());
+        $formatter->format('label_dummy_42')->willReturn('label_dummy_42');
+        $formatter->format('label_dummy_some_value')->willReturn('label_dummy_some_value');
+        $this->assertEquals(
+            array(
+                42 => 'label_dummy_42',
+                'some_value' => 'label_dummy_some_value'
+            ),
+            DummyEnum::getChoices('label_dummy_%s')
+        );
+        $this->assertEquals(
+            array(
+                42 => 42,
+                'some_value' => 'some_value'
+            ),
+            DummyEnum::getChoices()
+        );
     }
 }
