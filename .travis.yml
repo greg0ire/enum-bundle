@@ -1,3 +1,4 @@
+sudo: false
 env:
     - COMPOSER_OPTIONS=""
     - COMPOSER_OPTIONS="--prefer-lowest"
