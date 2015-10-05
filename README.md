@@ -51,6 +51,21 @@ class MyType
 }
 ```
 
+##Configuration
+
+AppKernel.php
+```php
+$bundles = array(
+    new Greg0ire\EnumBundle\Greg0ireEnumBundle(),
+);
+
+```
+
+```yaml
+#config.yml
+greg0ire_enum:
+    formatter: greg0ire.lower_case.formatter #  ~ | service instance of Greg0ire\EnumBundle\Formatter\FormatterInterface 
+```
 You then need to create translations for :
 
 - `color_type_black-white`

@@ -3,9 +3,12 @@
 namespace Greg0ire\EnumBundle;
 
 use Greg0ire\Enum\BaseEnum as LibraryEnum;
+use Greg0ire\EnumBundle\Formatter\FormatterInterface;
 
 abstract class BaseEnum extends LibraryEnum
 {
+    public static $formatter;
+
     /**
      * @param  mixed string|null a sprintf compatible pattern for generating labels
      *
@@ -28,12 +31,26 @@ abstract class BaseEnum extends LibraryEnum
             $values:
             array_map(
                 function ($element) use ($pattern) {
-                    return sprintf(
-                        $pattern,
-                        $element
-                    );
+                    return BaseEnum::format($pattern, $element);
                 },
                 $values
             );
+    }
+
+    protected static function format($pattern, $element)
+    {
+        $formatter = BaseEnum::$formatter;
+        $chain = sprintf($pattern, $element);
+
+        if ($formatter == null) {
+            return $chain;
+        }
+
+        return $formatter->format($chain);
+    }
+
+    public static function setFormatter(FormatterInterface $formatter)
+    {
+        BaseEnum::$formatter = $formatter;
     }
 }
