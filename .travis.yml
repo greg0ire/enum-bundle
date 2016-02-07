@@ -1,4 +1,7 @@
 sudo: false
+cache:
+    directories:
+        - $HOME/.composer/cache
 env:
     - COMPOSER_OPTIONS=""
     - COMPOSER_OPTIONS="--prefer-lowest"
