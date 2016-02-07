@@ -57,9 +57,13 @@ You then need to create translations for :
 - `color_type_color`
 - `color_type_colorized`
 
-The argument to `getChoices()` is optional, and the value will be used directly
-as a label should you choose not to specify it.  This makes sense if you decide
-to have a translation catalogue just for your enumeration.
+The first argument to `getChoices()` is optional, and the value will be used
+directly as a label should you choose not to specify it. This makes sense if
+you decide to have a translation catalogue just for your enumeration.
+The second argument, `choicesAsValues` only takes effect if your symfony version
+is < 3.0 and >= 2.7. It defaults to `false` for the moment, so that B.C. is
+kept. If you use symfony >= 2.8 and < 3.0, you will get a deprecation notice
+unless you set it to true and set `choices_as_values` option to `true`.
 
 [1]: https://packagist.org/packages/greg0ire/enum
 [2]: https://travis-ci.org/greg0ire/enum-bundle.svg?branch=master
