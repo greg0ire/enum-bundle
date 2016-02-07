@@ -1,7 +1,12 @@
 sudo: false
+cache:
+    directories:
+        - $HOME/.composer/cache
 env:
-    - COMPOSER_OPTIONS=""
     - COMPOSER_OPTIONS="--prefer-lowest"
+    - SYMFONY_VERSION="2.7.*" COMPOSER_OPTIONS=""
+    - SYMFONY_VERSION="2.8.*" COMPOSER_OPTIONS=""
+    - COMPOSER_OPTIONS=""
 language: php
 php:
     - 5.4
@@ -9,6 +14,12 @@ php:
     - 5.6
     - hhvm
     - nightly
-before_install: composer self-update
+before_install:
+    - composer self-update
+    - |
+        if [ "$SYMFONY_VERSION" != "" ]
+        then
+        composer require "symfony/symfony:${SYMFONY_VERSION}" --no-update
+        fi
 install: composer update ${COMPOSER_OPTIONS}
-script: vendor/bin/phpunit --coverage-text
+script: SYMFONY_DEPRECATIONS_HELPER=weak vendor/bin/phpunit --coverage-text
