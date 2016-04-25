@@ -3,7 +3,7 @@
     "description": "Integrates greg0ire/enum in a Symfony2 project",
     "keywords": ["enum", "enumeration"],
     "require": {
-        "greg0ire/enum": "~1.0",
+        "greg0ire/enum": "^2.0",
         "symfony/form": "~2.3|^3.0",
         "symfony/http-kernel": "~2.3|^3.0"
     },
@@ -19,7 +19,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "2.0.x-dev"
+            "dev-master": "3.0.x-dev"
         }
     },
     "authors": [
