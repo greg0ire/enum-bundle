@@ -16,6 +16,14 @@ php:
     - hhvm
     - nightly
 
+matrix:
+  fast_finish: true
+  include:
+    - php: 5.3
+      env: COMPOSER_OPTIONS="--prefer-lowest"
+  allow_failures:
+    - php: nightly
+
 before_install:
     - |
         if [ "$SYMFONY_VERSION" != "" ]
