@@ -17,7 +17,6 @@ php:
     - nightly
 
 before_install:
-    - composer self-update
     - |
         if [ "$SYMFONY_VERSION" != "" ]
         then
