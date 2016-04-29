@@ -1,3 +1,5 @@
+**This package is abandoned in favor of [greg0ire/enum][1]**
+
 # EnumBundle
 
 Integrates [greg0ire/enum][1] in a Symfony2 project. This actually not a real bundle
